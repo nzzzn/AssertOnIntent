@@ -41,29 +41,30 @@ public class AssertOnIntent {
 		{
 			Log.i("MalformedIntentException", m.getMsg() + " Exception number : " + m.getNumber() + ", " + sp0.exceptionIntentNumberMsg());
 
-			Intent diglogIntent = new Intent("android.intent.action.SHOWDIALOG");
-			diglogIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-			diglogIntent.setComponent(new ComponentName("kr.ac.yonsei.mobilesw.assertonintent", "kr.ac.yonsei.mobilesw.assertonintent.MainActivity"));
-			diglogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			diglogIntent.putExtra("msg", "MalformedIntentException. " + m.getMsg() + " Exception number : " + m.getNumber() + ", " + sp0.exceptionIntentNumberMsg());
-			
-			context.startActivity(diglogIntent);
-			
-			long threadCpuTimeNanosEnd = Debug.threadCpuTimeNanos();
-			Log.i("AssertOnIntent Processing Time", ((threadCpuTimeNanosEnd - threadCpuTimeNanosStart) / 1000000.0) + "ms");
-			
+						
 			if(handler != null)
 			{
+				long threadCpuTimeNanosEnd = Debug.threadCpuTimeNanos();
+				Log.i("AssertOnIntent Processing Time", ((threadCpuTimeNanosEnd - threadCpuTimeNanosStart) / 1000000.0) + "ms");
+				
 				handler.handle(intent, m);
 			}
 			else
 			{
+				Intent diglogIntent = new Intent("android.intent.action.SHOWDIALOG");
+				diglogIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+				diglogIntent.setComponent(new ComponentName("kr.ac.yonsei.mobilesw.assertonintent", "kr.ac.yonsei.mobilesw.assertonintent.MainActivity"));
+				diglogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				diglogIntent.putExtra("msg", "MalformedIntentException. " + m.getMsg() + " Exception number : " + m.getNumber() + ", " + sp0.exceptionIntentNumberMsg());
+				
+				context.startActivity(diglogIntent);
+				
+				long threadCpuTimeNanosEnd = Debug.threadCpuTimeNanos();
+				Log.i("AssertOnIntent Processing Time", ((threadCpuTimeNanosEnd - threadCpuTimeNanosStart) / 1000000.0) + "ms");
+				
 				System.exit(0);
 			}
 		}
-		
-		long threadCpuTimeNanosEnd = Debug.threadCpuTimeNanos();
-		Log.i("AssertOnIntent Processing Time", ((threadCpuTimeNanosEnd - threadCpuTimeNanosStart) / 1000000.0) + "ms");
 		
 		return checkIntent;
 	}
@@ -450,7 +451,7 @@ public class AssertOnIntent {
 			StaticParser<Character> sp = new StaticParser<Character>();
 			
 			tuplelist = item(inp);
-			if(tuplelist.isEmpty() == false && Character.compare(c, tuplelist.get(0).getValue()) == 0)
+			if(tuplelist.isEmpty() == false && c == tuplelist.get(0).getValue())
 			{
 				return sp.pReturn(tuplelist.get(0).getValue(), tuplelist.get(0).getInp());
 			}
@@ -625,7 +626,7 @@ public class AssertOnIntent {
 			StaticParser<String> sp = new StaticParser<String>();
 			
 			cTuplelist = item(inp);
-			if(cTuplelist.isEmpty() || Character.compare(' ', cTuplelist.get(0).getValue()) != 0)
+			if(cTuplelist.isEmpty() || ' ' != cTuplelist.get(0).getValue())
 			{
 				return sp.pReturn(null, inp);
 			}
@@ -766,12 +767,12 @@ public class AssertOnIntent {
 			}
 			
 			//cTuplelist = sp.item(inp);
-			if(cTuplelist.isEmpty() == false && Character.compare('.', cTuplelist.get(0).getValue()) == 0)
+			if(cTuplelist.isEmpty() == false && '.' == cTuplelist.get(0).getValue())
 			{
 				return sp.pReturn(cTuplelist.get(0).getValue(), cTuplelist.get(0).getInp());
 			}
 			
-			if(cTuplelist.isEmpty() == false && Character.compare('_', cTuplelist.get(0).getValue()) == 0)
+			if(cTuplelist.isEmpty() == false && '_' == cTuplelist.get(0).getValue())
 			{
 				return sp.pReturn(cTuplelist.get(0).getValue(), cTuplelist.get(0).getInp());
 			}

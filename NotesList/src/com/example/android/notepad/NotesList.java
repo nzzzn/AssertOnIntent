@@ -16,6 +16,10 @@
 
 package com.example.android.notepad;
 
+import kr.ac.yonsei.mobilesw.assertonintent.AssertOnIntent;
+import kr.ac.yonsei.mobilesw.assertonintent.MalformedIntentHandler;
+import kr.ac.yonsei.mobilesw.assertonintent.MalformedIntentException;
+
 import com.example.android.notepad.NotePad;
 
 import android.app.ListActivity;
@@ -72,6 +76,25 @@ public class NotesList extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        AssertOnIntent assertOnIntent = new AssertOnIntent();
+        assertOnIntent.assertOnIntent(getBaseContext(), getIntent(),
+        		"{ act=android.intent.action.MAIN dat=non-null cmp=com.example.android.notepad/com.example.android.notepad.NotesList }",
+            	new MalformedIntentHandler(){
+            		public void handle(Intent intent, MalformedIntentException m)
+            		{
+            			Log.i("MalformedIntentHandler.Handle", m.getMsg() + " : " + m.getNumber());
+            			
+            			switch(m.getNumber())
+            			{
+	            			case 102:
+	            				getIntent().setData(NotePad.Notes.CONTENT_URI);
+	        					break;
+	        				default:
+	        					System.exit(0);
+            			}
+            		}
+        });
+        
         // The user does not need to hold down the key to use menu shortcuts.
         setDefaultKeyMode(DEFAULT_KEYS_SHORTCUT);
 
