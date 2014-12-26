@@ -142,8 +142,7 @@ public class NoteEditor extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        AssertOnIntent assertOnIntent = new AssertOnIntent();
-        assertOnIntent.assertOnIntent(getBaseContext(), getIntent(),
+        new AssertOnIntent().assertOnIntent(getBaseContext(), getIntent(),
         		"{ act=android.intent.action.EDIT dat=non-null cmp=com.example.android.notepad/.NoteEditor } || " +
         		"{ act=android.intent.action.INSERT dat=non-null cmp=com.example.android.notepad/.NoteEditor } || " +
         		"{ act=android.intent.action.PASTE dat=non-null cmp=com.example.android.notepad/com.example.android.notepad.NoteEditor }",
