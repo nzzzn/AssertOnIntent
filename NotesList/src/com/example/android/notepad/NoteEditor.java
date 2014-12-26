@@ -146,6 +146,13 @@ public class NoteEditor extends Activity {
         		"{ act=android.intent.action.EDIT dat=non-null cmp=com.example.android.notepad/.NoteEditor } || " +
         		"{ act=android.intent.action.INSERT dat=non-null cmp=com.example.android.notepad/.NoteEditor } || " +
         		"{ act=android.intent.action.PASTE dat=non-null cmp=com.example.android.notepad/com.example.android.notepad.NoteEditor }",
+            	null);
+        
+        /*
+        new AssertOnIntent().assertOnIntent(getBaseContext(), getIntent(),
+        		"{ act=android.intent.action.EDIT dat=non-null cmp=com.example.android.notepad/.NoteEditor } || " +
+        		"{ act=android.intent.action.INSERT dat=non-null cmp=com.example.android.notepad/.NoteEditor } || " +
+        		"{ act=android.intent.action.PASTE dat=non-null cmp=com.example.android.notepad/com.example.android.notepad.NoteEditor }",
             	new MalformedIntentHandler(){
             		public void handle(Intent intent, MalformedIntentException m)
             		{
@@ -173,6 +180,7 @@ public class NoteEditor extends Activity {
             			System.exit(0);
             		}
         });
+        */
         
         /*
          * Creates an Intent to use when the Activity object's result is sent back to the
