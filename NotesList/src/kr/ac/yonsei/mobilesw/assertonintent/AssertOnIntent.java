@@ -1306,7 +1306,7 @@ public class AssertOnIntent {
 			}
 			errmsg = errToken(tmpTuplelist.get(0).getInp());
 			
-			s1Tuplelist = idOrNum(tmpTuplelist.get(0).getInp());
+			s1Tuplelist = idOrDot(tmpTuplelist.get(0).getInp());
 			if(s1Tuplelist.isEmpty())
 			{
 				throw new MalformedIntentException("couldn't parse Extra field. Token : " + errmsg, 14);
@@ -1322,7 +1322,7 @@ public class AssertOnIntent {
 			}
 			errmsg = errToken(tmpTuplelist.get(0).getInp());
 			
-			sTypeTuplelist = idOrNum(tmpTuplelist.get(0).getInp());
+			sTypeTuplelist = idOrDot(tmpTuplelist.get(0).getInp());
 			if(sTypeTuplelist.isEmpty())
 			{
 				throw new MalformedIntentException("couldn't parse Extra field. Token : " + errmsg, 14);
@@ -1376,7 +1376,7 @@ public class AssertOnIntent {
 			}
 			errmsg = errToken(tmpTuplelist.get(0).getInp());
 			
-			s1Tuplelist = idOrNum(tmpTuplelist.get(0).getInp());
+			s1Tuplelist = idOrDot(tmpTuplelist.get(0).getInp());
 			if(s1Tuplelist.isEmpty())
 			{
 				throw new MalformedIntentException("couldn't parse Extra field. Token : " + errmsg, 14);
@@ -1392,7 +1392,7 @@ public class AssertOnIntent {
 			}
 			errmsg = errToken(tmpTuplelist.get(0).getInp());
 			
-			sTypeTuplelist = idOrNum(tmpTuplelist.get(0).getInp());
+			sTypeTuplelist = idOrDot(tmpTuplelist.get(0).getInp());
 			if(sTypeTuplelist.isEmpty())
 			{
 				throw new MalformedIntentException("couldn't parse Extra field. Token : " + errmsg, 14);
