@@ -70,9 +70,8 @@ public class TitleEditor extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        AssertOnIntent assertOnIntent = new AssertOnIntent();        
-        assertOnIntent.assertOnIntent(getBaseContext(), getIntent(),
+      
+        new AssertOnIntent().assertOnIntent(getBaseContext(), getIntent(),
         		"{ dat=non-null cmp=com.example.android.notepad/com.example.android.notepad.TitleEditor }",
         	new MalformedIntentHandler(){
         		public void handle(Intent intent, MalformedIntentException m)
