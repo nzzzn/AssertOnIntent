@@ -50,6 +50,7 @@ public class AssertOnIntent {
 			}
 			else
 			{
+				/*
 				Intent diglogIntent = new Intent("android.intent.action.SHOWDIALOG");
 				diglogIntent.addCategory(Intent.CATEGORY_LAUNCHER);
 				diglogIntent.setComponent(new ComponentName("kr.ac.yonsei.mobilesw.assertonintent", "kr.ac.yonsei.mobilesw.assertonintent.MainActivity"));
@@ -60,7 +61,7 @@ public class AssertOnIntent {
 				
 				long threadCpuTimeNanosEnd = Debug.threadCpuTimeNanos();
 				Log.i("AssertOnIntent Processing Time", ((threadCpuTimeNanosEnd - threadCpuTimeNanosStart) / 1000000.0) + "ms");
-				
+				*/
 				System.exit(0);
 			}
 		}
