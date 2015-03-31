@@ -76,7 +76,7 @@ public class NotesList extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        new AssertOnIntent().assertOnIntent(getBaseContext(), getIntent(),
+        new AssertOnIntent().assertOnIntent(getIntent(),
         		"{ act=android.intent.action.MAIN dat=non-null cmp=com.example.android.notepad/com.example.android.notepad.NotesList }",
             	new MalformedIntentHandler(){
             		public void handle(Intent intent, MalformedIntentException m)

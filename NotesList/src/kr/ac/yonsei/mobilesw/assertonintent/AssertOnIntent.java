@@ -19,7 +19,8 @@ public class AssertOnIntent {
 	IntentDataset intentDataset = null;
 	Boolean checkIntent = false;
 
-	public boolean assertOnIntent(Context context, Intent intent, String assertString, MalformedIntentHandler handler)
+	//public boolean assertOnIntent(Context context, Intent intent, String assertString, MalformedIntentHandler handler)
+	public boolean assertOnIntent(Intent intent, String assertString, MalformedIntentHandler handler)
 	{
 		long threadCpuTimeNanosStart = Debug.threadCpuTimeNanos();
 		
@@ -40,7 +41,6 @@ public class AssertOnIntent {
 		{
 			Log.i("MalformedIntentException", m.getMsg() + " Exception number : " + m.getNumber() + ", " + sp0.exceptionIntentNumberMsg());
 
-						
 			if(handler != null)
 			{
 				long threadCpuTimeNanosEnd = Debug.threadCpuTimeNanos();

@@ -49,7 +49,7 @@ public class NotesLiveFolder extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        new AssertOnIntent().assertOnIntent(getBaseContext(), getIntent(),
+        new AssertOnIntent().assertOnIntent(getIntent(),
         		"{ act=android.intent.action.CREATE_LIVE_FOLDER cmp=com.example.android.notepad/.NotesLiveFolder }",
             	new MalformedIntentHandler(){
             		public void handle(Intent intent, MalformedIntentException m)
