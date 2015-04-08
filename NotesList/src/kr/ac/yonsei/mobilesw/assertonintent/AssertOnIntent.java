@@ -39,6 +39,7 @@ public class AssertOnIntent {
 		}
 		catch(MalformedIntentException m)
 		{
+			Log.i("IntentSpec : ", "Error Catch");
 			Log.i("MalformedIntentException", m.getMsg() + " Exception number : " + m.getNumber() + ", " + sp0.exceptionIntentNumberMsg());
 
 			if(handler != null)
@@ -65,6 +66,8 @@ public class AssertOnIntent {
 				System.exit(0);
 			}
 		}
+		
+		Log.i("IntentSpec : ", "Pass");
 		
 		return checkIntent;
 	}
