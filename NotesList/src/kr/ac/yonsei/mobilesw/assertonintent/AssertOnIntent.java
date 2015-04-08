@@ -39,7 +39,7 @@ public class AssertOnIntent {
 		}
 		catch(MalformedIntentException m)
 		{
-			Log.i("IntentSpec : ", "Error Catch");
+			Log.i("IntentSpec", "Error Catch");
 			Log.i("MalformedIntentException", m.getMsg() + " Exception number : " + m.getNumber() + ", " + sp0.exceptionIntentNumberMsg());
 
 			if(handler != null)
@@ -67,7 +67,7 @@ public class AssertOnIntent {
 			}
 		}
 		
-		Log.i("IntentSpec : ", "Pass");
+		Log.i("IntentSpec", "Pass");
 		
 		return checkIntent;
 	}
@@ -210,11 +210,13 @@ public class AssertOnIntent {
 
 				throw new MalformedIntentException("Couldn't match described Extra : " + keyAndTypes + ".  Actual Extra : null.", 109);
 			}
-			else if(intentData.lengthExtra() != intent.getExtras().size())
+			/*
+			else if(intentData.lengthExtra() > intent.getExtras().size())
 			{
 				throw new MalformedIntentException("Couldn't match described number of Extra : " + intentData.lengthExtra() + ".  Actual number of Extra : " + intent.getExtras().size() + ".", 108);
 				//return false;
 			}
+			*/
 			
 			if(extraArrayCompare(intentData.getExtraArray(), intent.getExtras()) == false)
 			{
