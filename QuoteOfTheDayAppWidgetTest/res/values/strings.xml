@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">QuoteOfTheDayAppWidgetTest</string>
+    <string name="the_quote">The telephone book is full of facts, but it doesn\'t contain a single idea\nMortimer Adler</string>
+    <string name="broadcast_the_quote_of_the_day">Broadcast the Quote of the Day</string>
+    <string name="title_activity_quote_of_the_day_brwidget">QuoteOfTheDayBRWidget</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

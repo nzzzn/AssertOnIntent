@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.quoteofthedayappwidgettest"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.QODPERMISSION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+         QuoteOfTheDayBR는 등록되어잇는 방송서비스를 수신하는 역활을 한다.
+         android.intent.action.QUOTES_OF_THE_DAY_RECEIVED 방송 메세지를 감지하면 class내에서 처리해 준다.
+        -->
+        <receiver android:name=".QuoteOfTheDayBR" >
+            <intent-filter>
+                <action android:name="android.appwidget.provider" />
+                <action android:name="android.intent.action.QUOTES_OF_THE_DAY_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- QuoteOfTheDayAppWidgetProvider -->
+        <receiver android:name=".QuoteOfTheDayAppWidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.QUOTES_OF_THE_DAY_RECEIVED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/quotesmeta" />
+        </receiver>
+    </application>
+
+</manifest>
