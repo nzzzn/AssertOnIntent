@@ -76,6 +76,7 @@ public class NotesList extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        /*
         new AssertOnIntent().assertOnIntent(getIntent(),
         		"{ act=android.intent.action.MAIN dat=non-null cmp=com.example.android.notepad/com.example.android.notepad.NotesList }",
             	new MalformedIntentHandler(){
@@ -93,6 +94,7 @@ public class NotesList extends ListActivity {
             			}
             		}
         });
+        */
         
         // The user does not need to hold down the key to use menu shortcuts.
         setDefaultKeyMode(DEFAULT_KEYS_SHORTCUT);

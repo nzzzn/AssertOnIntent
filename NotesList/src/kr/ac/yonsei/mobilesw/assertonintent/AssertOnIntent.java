@@ -36,6 +36,8 @@ public class AssertOnIntent {
 		{
 			intentDataset = sp0.parse(assertString);
 			checkIntent = checkIntent(intent, intentDataset, handler);
+			
+			Log.i("IntentSpec", "Pass");
 		}
 		catch(MalformedIntentException m)
 		{
@@ -66,8 +68,6 @@ public class AssertOnIntent {
 				System.exit(0);
 			}
 		}
-		
-		Log.i("IntentSpec", "Pass");
 		
 		return checkIntent;
 	}
