@@ -1,3 +1,3 @@
 # AssertOnIntent
 
-homepage : [http://mobilesw.yonsei.ac.kr/](http://mobilesw.yonsei.ac.kr/)
+homepage : [http://swlab.jnu.ac.kr/](http://swlab.jnu.ac.kr/)
